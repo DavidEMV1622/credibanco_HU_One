@@ -12,7 +12,9 @@ class WelcomeView extends StatelessWidget {
           scrollDirection: Axis.horizontal,
           children: <Widget>
           [
-            Container(
+            Container(child: Row(
+              
+            ),
             
             )
           ],
