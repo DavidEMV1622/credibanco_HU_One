@@ -47,16 +47,16 @@ Widget subtituloDos(String texto) {
 }
 
 // Widget del texto Etiqueta
-Widget textoEtiqueta(String texto, Color colorText) {
+Widget textoEtiqueta(String texto) {
   return Container(
     child: Text(
       texto,
       style: TextStyle(
-        color: colorText,
+        color: CustomColors.colorNegro,
         fontSize: 14, 
         fontWeight: FontWeight.bold,
       ),
-      textAlign: TextAlign.center,
+      textAlign: TextAlign.start,
     ),
   );
 }
