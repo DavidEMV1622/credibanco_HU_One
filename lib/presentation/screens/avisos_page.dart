@@ -3,6 +3,9 @@ import 'package:credibanco_hu_aca_1715/presentation/utils/TextFormatter.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
+import '../widgets/barrProgress.dart';
+import '../widgets/buttons.dart';
+
 class AvisoPage extends StatefulWidget {
   const AvisoPage({super.key});
 
@@ -12,25 +15,6 @@ class AvisoPage extends StatefulWidget {
 
 class _AvisoPageState extends State<AvisoPage> {
 
-  /*
-  bool _working = false;
-
-  void startWorking() async {
-    this.setState(() {
-      this._working = true;
-    });
-  }
-
-  void finishWorking() {
-    this.setState(() {
-      this._working = false;
-    });
-  }
-  */
-
-  // Variable para inicializar la imagen
-  //final String assetName = 'assets/imageOne.svg';
-  
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -39,12 +23,14 @@ class _AvisoPageState extends State<AvisoPage> {
       ),
 
       body: Center(
-        
 
           child: ListView(
+            //physics: ,
             scrollDirection: Axis.horizontal,
             children: [
               buildCard_1(),
+
+              buildCard_1_prueba(),
               
               buildCard_2(),
               
@@ -54,7 +40,313 @@ class _AvisoPageState extends State<AvisoPage> {
         ),
     );
   }
+  Widget buildCard_1() => 
+    Container(
+      child: Center(
+        child: Padding(
+          padding: EdgeInsets.fromLTRB(12, 20, 12, 20),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            crossAxisAlignment: CrossAxisAlignment.start,
+        
+            children: <Widget>[
+        
+              Row(
+                // Separacion entre cada widdget
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                // Centrar widgets
+                crossAxisAlignment: CrossAxisAlignment.center,
+                
+                children: [
+                  // Llamada de la bara de progreso 1
+                  ProgressBarr(valor: 1),
+                  // Llamada de la bara de progreso 2
+                  ProgressBarr(valor: 0),
+                  // Llamada de la bara de progreso 3
+                  ProgressBarr(valor: 0),
+                ],
+              ),
 
+              Container(
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    subtituloDos("Bienvenido"),
+
+                    SizedBox(
+                      height: 25.0,
+                    ),
+              
+                    textoCuerpo("Además de gestionar tus transacciones, también podrás integrar a tu equipo de trabajo."),
+                  ]
+                ),
+              ),
+              
+              Center(
+                // Llamado de la imagen
+                child: SvgPicture.asset( 
+                  'assets/imageOne.svg'
+                ),
+              ),
+
+              SizedBox(
+                height: 250.0,
+              ),
+            ]
+          ),
+        ),
+      ),
+      /*
+    decoration: BoxDecoration(
+      color: Colors.red,
+    
+    ), */
+    width: MediaQuery.of(context).size.width,
+    height: MediaQuery.of(context).size.height,
+    
+  );
+
+  Widget buildCard_1_prueba() => 
+    Container(
+      child: Center(
+        child: Padding(
+          padding: EdgeInsets.fromLTRB(12, 20, 12, 20),
+          child: Column(
+            //mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            crossAxisAlignment: CrossAxisAlignment.start,
+        
+            children: <Widget>[
+        
+              Row(
+                // Separacion entre cada widdget
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                // Centrar widgets
+                crossAxisAlignment: CrossAxisAlignment.center,
+                
+                children: [
+                  // Llamada de la bara de progreso 1
+                  ProgressBarr(valor: 1),
+                  // Llamada de la bara de progreso 2
+                  ProgressBarr(valor: 0),
+                  // Llamada de la bara de progreso 3
+                  ProgressBarr(valor: 0),
+                ],
+              ),
+
+              SizedBox(
+                height: MediaQuery.of(context).size.height * 0.06,
+              ),
+
+              Container(
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    subtituloDos("Bienvenido"),
+
+                    SizedBox(
+                      //height: 25.0,
+                      height: MediaQuery.of(context).size.height * 0.03,
+                    ),
+              
+                    textoCuerpo("Además de gestionar tus transacciones, también podrás integrar a tu equipo de trabajo."),
+                  ]
+                ),
+              ),
+
+              SizedBox(
+                height: MediaQuery.of(context).size.height * 0.10,
+              ),
+              
+              Center(
+                // Llamado de la imagen
+                child: SvgPicture.asset( 
+                  'assets/imageOne.svg'
+                ),
+              ),
+
+              /*
+              SizedBox(
+                height: MediaQuery.of(context).size.height * 0.33,
+              ),
+              */
+            ]
+          ),
+        ),
+      ),
+      /*
+    decoration: BoxDecoration(
+      color: Colors.red,
+    
+    ), */
+    width: MediaQuery.of(context).size.width,
+    height: MediaQuery.of(context).size.height,
+    
+  );
+
+  Widget buildCard_2() => 
+    Container(
+      child: Center(
+        child: Padding(
+          padding: EdgeInsets.fromLTRB(12, 20, 12, 20),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            crossAxisAlignment: CrossAxisAlignment.start,
+        
+            children: <Widget>[
+        
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  
+                  // Llamada de la bara de progreso 1
+                  ProgressBarr(valor: 1),
+                  // Llamada de la bara de progreso 2
+                  ProgressBarr(valor: 1),
+                  // Llamada de la bara de progreso 3
+                  ProgressBarr(valor: 0),
+                ],
+              ),
+
+              Container(
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    subtituloDos("Bienvenido"),
+
+                    SizedBox(
+                      height: 25.0,
+                    ),
+                      
+                    textoCuerpo("Podrás realizar la administración de usuarios siempre que lo desees desde la opción de: "),
+
+                    SizedBox(
+                      height: 25.0,
+                    ),
+
+                    textoEtiqueta("Más- Adminitración de usuarios"),
+                  ],
+                ),
+              ),
+
+              Center(
+                // Llamado de la imagen
+                child: SvgPicture.asset( 
+                  'assets/imageTwo.svg',
+                  width: 2000,
+                  height: 400,
+                ),
+              ),
+              SizedBox(
+                height: 38.0,
+              ),
+            ]
+          ),
+        ),
+      ),
+      /*
+    decoration: BoxDecoration(
+      color: Colors.green,
+    
+    ),*/
+    width: MediaQuery.of(context).size.width,
+    height: MediaQuery.of(context).size.height,
+  );
+
+  Widget buildCard_3() => 
+    Container(
+      child: Center(
+        child: Padding(
+          padding: EdgeInsets.fromLTRB(12, 20, 12, 20),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            crossAxisAlignment: CrossAxisAlignment.start,
+        
+            children: <Widget>[
+        
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                
+                children: [
+                  // Llamada de la bara de progreso 1
+                  ProgressBarr(valor: 1),
+                  // Llamada de la bara de progreso 2
+                  ProgressBarr(valor: 1),
+                  // Llamada de la bara de progreso 3
+                  ProgressBarr(valor: 1),
+                ],
+              ),
+
+              Container(
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    subtituloDos("Bienvenido"),
+
+                    SizedBox(
+                      height: 25.0,
+                    ),
+        
+                    textoCuerpo("Podrás crear usuarios, activarlos, inactivarlos y editarlos"),
+                  ],
+                ),
+              ),
+
+              SizedBox(
+                height: 45.0,
+              ),
+
+              Center(
+                // Llamado de la imagen
+                child: SvgPicture.asset( 
+                  'assets/imageThree.svg',
+                  width: 900,
+                  height: 750,
+                ),
+              ),
+
+              SizedBox(
+                height: 45.0,
+              ),
+              
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  BtnPrimaery(
+                    textButton: "Omitir",
+                    colorBox: Colors.white,
+                    border: Border.all(width: 2),
+                    onPressed: () {},
+                  ),
+
+                  BtnPrimaery(
+                    textButton: "Continuar",
+                    colorBox: CustomColors.colorAmarilloMostaza,
+                    onPressed: () {},
+                  ),
+                ]
+              ),
+            ]
+          ),
+        ),
+      ),
+      /*
+    decoration: BoxDecoration(
+      color: Colors.yellow,
+    
+    ), */
+    width: MediaQuery.of(context).size.width,
+    height: MediaQuery.of(context).size.height,
+  );
+
+
+/*
   Widget buildCard_1() => 
     Container(
       child: Center(
@@ -69,83 +361,21 @@ class _AvisoPageState extends State<AvisoPage> {
               SizedBox(width: 12,),
         
               Row(
-                mainAxisAlignment: MainAxisAlignment.center,
+                // Separacion entre cada widdget
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                // Centrar widgets
                 crossAxisAlignment: CrossAxisAlignment.center,
+                
                 children: [
-                  
-                  SizedBox(
-                    // Toma todo el largo de la pantalla y se multiplica por el 23%
-                    width: MediaQuery.of(context).size.width * 0.28,
-                    height: 4.5, // ancho de la barra de progreso
-        
-                    // Widget "ClipRRect" para redondear las esquinas del hijo
-                    child: ClipRRect(
-                      borderRadius: BorderRadius.all(Radius.circular(12)),
-                      // Creacion de una linea de progreso
-                      child: LinearProgressIndicator(
-                        //value: this._working? null: 1,
-                        value: 1, // "0" vacio y "1" lleno
-                        backgroundColor: CustomColors.colorGris_3, // Color del fondo
-                        // Color de la barra con animacion
-                        valueColor: AlwaysStoppedAnimation(CustomColors.colorVerdePantano),
-                        minHeight: 10, // Grosor de la barra de progreso
-                      ),
-                    ),
-                  ),
-        
-                  SizedBox(width: 12,),
-        
-                  SizedBox(
-                    width: MediaQuery.of(context).size.width * 0.28,
-                    height: 4.5,
-        
-                    child: ClipRRect(
-                      borderRadius: BorderRadius.all(Radius.circular(12)),
-                      
-                      child: LinearProgressIndicator(
-                        value: 0, // "0" vacio y "1" lleno
-                        backgroundColor: CustomColors.colorGris_3,
-                        valueColor: AlwaysStoppedAnimation(CustomColors.colorVerdePantano),
-                        minHeight: 10,
-                      ),
-                    ),
-                  ),
-        
-                  SizedBox(width: 12,),
-        
-                  SizedBox(
-                    width: MediaQuery.of(context).size.width * 0.28,
-                    height: 4.5,
-        
-                    child: ClipRRect(
-                      borderRadius: BorderRadius.all(Radius.circular(12)),
-                      
-                      child: LinearProgressIndicator(
-                        value: 0, // "0" vacio y "1" lleno
-                        backgroundColor: CustomColors.colorGris_3,
-                        valueColor: AlwaysStoppedAnimation(CustomColors.colorVerdePantano),
-                        minHeight: 10,
-                      ),
-                    ),
-                  ),
+                  // Llamada de la bara de progreso 1
+                  ProgressBarr(valor: 1),
+                  // Llamada de la bara de progreso 2
+                  ProgressBarr(valor: 0),
+                  // Llamada de la bara de progreso 3
+                  ProgressBarr(valor: 0),
                 ],
               ),
               
-              /*
-                  ElevatedButton(
-                      child: Text("Start"),
-                      onPressed: this._working? null: () {
-                        this.startWorking();
-                      }
-                  ),
-                  ElevatedButton(
-                      child: Text("Finish"),
-                      onPressed: !this._working? null: () {
-                        this.finishWorking();
-                      }
-                  ),
-              */
-                  
               SizedBox(
                 height: 15.0,
               ),
@@ -181,7 +411,8 @@ class _AvisoPageState extends State<AvisoPage> {
     height: MediaQuery.of(context).size.height,
     
   );
-
+*/
+/*
   Widget buildCard_2() => 
     Container(
       child: Center(
@@ -196,63 +427,16 @@ class _AvisoPageState extends State<AvisoPage> {
               SizedBox(width: 12,),
         
               Row(
-                mainAxisAlignment: MainAxisAlignment.center,
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   
-                  SizedBox(
-                    width: MediaQuery.of(context).size.width * 0.28,
-                    height: 4.5, // ancho de la barra de progreso
-        
-                    // Widget "ClipRRect" para redondear las esquinas del hijo
-                    child: ClipRRect(
-                      borderRadius: BorderRadius.all(Radius.circular(12)),
-
-                      // Creacion de una linea de progreso
-                      child: LinearProgressIndicator(
-                        value: 1, // "0" vacio y "1" lleno
-                        backgroundColor: CustomColors.colorGris_3,
-                        valueColor: AlwaysStoppedAnimation(CustomColors.colorVerdePantano),
-                        minHeight: 10,
-                      ),
-                    ),
-                  ),
-        
-                  SizedBox(width: 12,),
-        
-                  SizedBox(
-                    width: MediaQuery.of(context).size.width * 0.28,
-                    height: 4.5,
-        
-                    child: ClipRRect(
-                      borderRadius: BorderRadius.all(Radius.circular(12)),
-                      
-                      child: LinearProgressIndicator(
-                        value: 1, // "0" vacio y "1" lleno
-                        backgroundColor: CustomColors.colorGris_3,
-                        valueColor: AlwaysStoppedAnimation(CustomColors.colorVerdePantano),
-                        minHeight: 10,
-                      ),
-                    ),
-                  ),
-        
-                  SizedBox(width: 12,),
-        
-                  SizedBox(
-                    width: MediaQuery.of(context).size.width * 0.28,
-                    height: 4.5,
-        
-                    child: ClipRRect(
-                      borderRadius: BorderRadius.all(Radius.circular(12)),
-                      
-                      child: LinearProgressIndicator(
-                        value: 0,
-                        backgroundColor: CustomColors.colorGris_3,
-                        valueColor: AlwaysStoppedAnimation(CustomColors.colorVerdePantano),
-                        minHeight: 10,
-                      ),
-                    ),
-                  ),
+                  // Llamada de la bara de progreso 1
+                  ProgressBarr(valor: 1),
+                  // Llamada de la bara de progreso 2
+                  ProgressBarr(valor: 1),
+                  // Llamada de la bara de progreso 3
+                  ProgressBarr(valor: 0),
                 ],
               ),
                   
@@ -298,7 +482,8 @@ class _AvisoPageState extends State<AvisoPage> {
     width: MediaQuery.of(context).size.width,
     height: MediaQuery.of(context).size.height,
   );
-
+*/
+/*
   Widget buildCard_3() => 
     Container(
       child: Center(
@@ -313,63 +498,16 @@ class _AvisoPageState extends State<AvisoPage> {
               SizedBox(width: 12,),
         
               Row(
-                mainAxisAlignment: MainAxisAlignment.center,
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
                 crossAxisAlignment: CrossAxisAlignment.center,
+                
                 children: [
-                  
-                  SizedBox(
-                    width: MediaQuery.of(context).size.width * 0.28,
-                    height: 4.5, // ancho de la barra de progreso
-        
-                    // Widget "ClipRRect" para redondear las esquinas del hijo
-                    child: ClipRRect(
-                      borderRadius: BorderRadius.all(Radius.circular(12)),
-
-                      // Creacion de una linea de progreso
-                      child: LinearProgressIndicator(
-                        value: 1, // "0" vacio y "1" lleno
-                        backgroundColor: CustomColors.colorGris_3,
-                        valueColor: AlwaysStoppedAnimation(CustomColors.colorVerdePantano),
-                        minHeight: 10,
-                      ),
-                    ),
-                  ),
-        
-                  SizedBox(width: 12,),
-        
-                  SizedBox(
-                    width: MediaQuery.of(context).size.width * 0.28,
-                    height: 4.5,
-        
-                    child: ClipRRect(
-                      borderRadius: BorderRadius.all(Radius.circular(12)),
-                      
-                      child: LinearProgressIndicator(
-                        value: 1, // "0" vacio y "1" lleno
-                        backgroundColor: CustomColors.colorGris_3,
-                        valueColor: AlwaysStoppedAnimation(CustomColors.colorVerdePantano),
-                        minHeight: 10,
-                      ),
-                    ),
-                  ),
-        
-                  SizedBox(width: 12,),
-        
-                  SizedBox(
-                    width: MediaQuery.of(context).size.width * 0.28,
-                    height: 4.5,
-        
-                    child: ClipRRect(
-                      borderRadius: BorderRadius.all(Radius.circular(12)),
-                      
-                      child: LinearProgressIndicator(
-                        value: 1,
-                        backgroundColor: CustomColors.colorGris_3,
-                        valueColor: AlwaysStoppedAnimation(CustomColors.colorVerdePantano),
-                        minHeight: 10,
-                      ),
-                    ),
-                  ),
+                  // Llamada de la bara de progreso 1
+                  ProgressBarr(valor: 1),
+                  // Llamada de la bara de progreso 2
+                  ProgressBarr(valor: 1),
+                  // Llamada de la bara de progreso 3
+                  ProgressBarr(valor: 1),
                 ],
               ),
                   
@@ -397,6 +535,29 @@ class _AvisoPageState extends State<AvisoPage> {
                   height: 250,
                 ),
               ),
+
+              SizedBox(
+                height: 180.0,
+              ),
+              
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  BtnPrimaery(
+                    textButton: "Omitir",
+                    colorBox: Colors.white,
+                    border: Border.all(width: 2),
+                    onPressed: () {},
+                  ),
+
+                  BtnPrimaery(
+                    textButton: "Continuar",
+                    colorBox: CustomColors.colorAmarilloMostaza,
+                    onPressed: () {},
+                  ),
+                ]
+              ),
             ]
           ),
         ),
@@ -409,10 +570,6 @@ class _AvisoPageState extends State<AvisoPage> {
     width: MediaQuery.of(context).size.width,
     height: MediaQuery.of(context).size.height,
   );
-/*
-  // Widget para invocar la imagen .svg
-  final Widget svg = SvgPicture.asset(
-    "imageOne",
-  );*/
-  
+*/
+
 }
