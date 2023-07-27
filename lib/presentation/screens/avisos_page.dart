@@ -305,8 +305,8 @@ class _AvisoPageState extends State<AvisoPage> {
                 // Llamado de la imagen
                 child: SvgPicture.asset( 
                   'assets/imageThree.svg',
-                  width: 900,
-                  height: 750,
+                  width: 600,
+                  height: 250,
                 ),
               ),
 
