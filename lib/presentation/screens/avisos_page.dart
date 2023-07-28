@@ -23,21 +23,21 @@ class _AvisoPageState extends State<AvisoPage> {
       ),
 
       body: Center(
+        child: ListView(
+          addSemanticIndexes: true,
+          physics: ScrollPhysics(), // animacion al llegar al final de la lista
+          scrollDirection: Axis.horizontal, // Mover la lista en horizontal
+          children: [
+            //buildCard_1(),
 
-          child: ListView(
-            //physics: ,
-            scrollDirection: Axis.horizontal,
-            children: [
-              buildCard_1(),
-
-              buildCard_1_prueba(),
-              
-              buildCard_2(),
-              
-              buildCard_3(),
-            ]
-          )
-        ),
+            buildCard_1_prueba(),
+            
+            buildCard_2(),
+            
+            buildCard_3(),
+          ]
+        )
+      ),
     );
   }
   Widget buildCard_1() => 
@@ -52,7 +52,7 @@ class _AvisoPageState extends State<AvisoPage> {
             children: <Widget>[
         
               Row(
-                // Separacion entre cada widdget
+                // Separacion entre cada widdget (cada barra de progreso)
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 // Centrar widgets
                 crossAxisAlignment: CrossAxisAlignment.center,
@@ -67,6 +67,7 @@ class _AvisoPageState extends State<AvisoPage> {
                 ],
               ),
 
+              // Manejo de los textos
               Container(
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
@@ -82,9 +83,9 @@ class _AvisoPageState extends State<AvisoPage> {
                   ]
                 ),
               ),
-              
+
+              // Llamado de la imagen
               Center(
-                // Llamado de la imagen
                 child: SvgPicture.asset( 
                   'assets/imageOne.svg'
                 ),
@@ -97,11 +98,12 @@ class _AvisoPageState extends State<AvisoPage> {
           ),
         ),
       ),
-      /*
+    /*
     decoration: BoxDecoration(
       color: Colors.red,
     
     ), */
+    // Definir parametro del largo y alto de la pantalla para el contenido
     width: MediaQuery.of(context).size.width,
     height: MediaQuery.of(context).size.height,
     
@@ -119,9 +121,7 @@ class _AvisoPageState extends State<AvisoPage> {
             children: <Widget>[
         
               Row(
-                // Separacion entre cada widdget
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
-                // Centrar widgets
                 crossAxisAlignment: CrossAxisAlignment.center,
                 
                 children: [
@@ -146,7 +146,6 @@ class _AvisoPageState extends State<AvisoPage> {
                     subtituloDos("Bienvenido"),
 
                     SizedBox(
-                      //height: 25.0,
                       height: MediaQuery.of(context).size.height * 0.03,
                     ),
               
@@ -156,13 +155,15 @@ class _AvisoPageState extends State<AvisoPage> {
               ),
 
               SizedBox(
-                height: MediaQuery.of(context).size.height * 0.10,
+                height: MediaQuery.of(context).size.height * 0.07,
               ),
               
               Center(
                 // Llamado de la imagen
                 child: SvgPicture.asset( 
-                  'assets/imageOne.svg'
+                  'assets/imageOne.svg',
+                  width: 2000,
+                  height: 400,
                 ),
               ),
 
@@ -191,7 +192,7 @@ class _AvisoPageState extends State<AvisoPage> {
         child: Padding(
           padding: EdgeInsets.fromLTRB(12, 20, 12, 20),
           child: Column(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            //mainAxisAlignment: MainAxisAlignment.spaceBetween,
             crossAxisAlignment: CrossAxisAlignment.start,
         
             children: <Widget>[
@@ -210,6 +211,10 @@ class _AvisoPageState extends State<AvisoPage> {
                 ],
               ),
 
+              SizedBox(
+                height: MediaQuery.of(context).size.height * 0.06,
+              ),
+
               Container(
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
@@ -218,18 +223,22 @@ class _AvisoPageState extends State<AvisoPage> {
                     subtituloDos("Bienvenido"),
 
                     SizedBox(
-                      height: 25.0,
+                      height: MediaQuery.of(context).size.height * 0.03,
                     ),
                       
                     textoCuerpo("Podrás realizar la administración de usuarios siempre que lo desees desde la opción de: "),
 
                     SizedBox(
-                      height: 25.0,
+                      height: MediaQuery.of(context).size.height * 0.03,
                     ),
 
                     textoEtiqueta("Más- Adminitración de usuarios"),
                   ],
                 ),
+              ),
+
+              SizedBox(
+                height: MediaQuery.of(context).size.height * 0.05,
               ),
 
               Center(
@@ -239,9 +248,6 @@ class _AvisoPageState extends State<AvisoPage> {
                   width: 2000,
                   height: 400,
                 ),
-              ),
-              SizedBox(
-                height: 38.0,
               ),
             ]
           ),
@@ -262,7 +268,7 @@ class _AvisoPageState extends State<AvisoPage> {
         child: Padding(
           padding: EdgeInsets.fromLTRB(12, 20, 12, 20),
           child: Column(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            //mainAxisAlignment: MainAxisAlignment.spaceBetween,
             crossAxisAlignment: CrossAxisAlignment.start,
         
             children: <Widget>[
@@ -281,6 +287,10 @@ class _AvisoPageState extends State<AvisoPage> {
                 ],
               ),
 
+              SizedBox(
+                height: MediaQuery.of(context).size.height * 0.06,
+              ),
+
               Container(
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
@@ -289,7 +299,7 @@ class _AvisoPageState extends State<AvisoPage> {
                     subtituloDos("Bienvenido"),
 
                     SizedBox(
-                      height: 25.0,
+                      height: MediaQuery.of(context).size.height * 0.03,
                     ),
         
                     textoCuerpo("Podrás crear usuarios, activarlos, inactivarlos y editarlos"),
@@ -298,7 +308,7 @@ class _AvisoPageState extends State<AvisoPage> {
               ),
 
               SizedBox(
-                height: 45.0,
+                height: MediaQuery.of(context).size.height * 0.12,
               ),
 
               Center(
@@ -311,7 +321,7 @@ class _AvisoPageState extends State<AvisoPage> {
               ),
 
               SizedBox(
-                height: 45.0,
+                height: MediaQuery.of(context).size.height * 0.16,
               ),
               
               Row(

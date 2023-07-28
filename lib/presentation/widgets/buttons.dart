@@ -29,13 +29,13 @@ class BtnPrimaery extends StatelessWidget {
 
         onPressed: onPressed, // Evento al presionar el boton
 
-        padding: EdgeInsets.symmetric(horizontal: 30, vertical: 20),
+        padding: EdgeInsets.symmetric(horizontal: 30, vertical: 10),
 
         // Agregar texto dentro del boton
         child: Text(
           textButton,
           style: TextStyle(
-            fontSize: 20,
+            fontSize: 16,
             fontWeight: FontWeight.bold,
           ),
         ),
