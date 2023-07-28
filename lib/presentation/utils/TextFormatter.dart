@@ -32,12 +32,13 @@ Widget subtituloUno(String texto) {
 }
 
 // Widget del Subtitulo 2
-Widget subtituloDos(String texto) {
+Widget subtituloDos(String texto, double fontSizeText) {
   return Container(
     child: Text(
       texto,
       style: TextStyle(
-        fontSize: 18,
+        //fontSize: 18,
+        fontSize: fontSizeText,
         color: CustomColors.colorVerdeOscuroFuerte,
         fontWeight: FontWeight.bold,
       ),
@@ -62,13 +63,13 @@ Widget textoEtiqueta(String texto) {
 }
 
 // Widget del texto Cuerpo
-Widget textoCuerpo(String texto) {
+Widget textoCuerpo(String texto, double fontSizeText) {
   return Container(
     child: Text(
       texto,
       style: TextStyle(
         color: CustomColors.colorNegro,
-        fontSize: 14,
+        fontSize: fontSizeText,
       ),
       textAlign: TextAlign.start,
     ),
