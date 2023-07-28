@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 import '../widgets/BarProgress.dart';
 
@@ -53,7 +54,96 @@ class _pageOneState extends State<pageOne> {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Row(
-              mainAxisAlignment: MainAxisAlignment.center,
+              //-------------------------BARRA DE PROGRESO-------------
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                Barra_A(
+                  varColor: 1,
+                ),
+                Barra_A(
+                  varColor: 1,
+                ),
+                Barra_A(
+                  varColor: 0,
+                ),
+              ],
+            ),
+            SizedBox(
+              height: 45,
+            ),
+            Column(
+              mainAxisAlignment: MainAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  "Bievenido",
+                  style: TextStyle(
+                    fontSize: MediaQuery.of(context).size.width > 500
+                        ? 60
+                        : MediaQuery.of(context).size.width < 300
+                            ? 30
+                            : 40,
+                    color: Color.fromRGBO(18, 71, 25, 01),
+                  ),
+                ),
+                Text(
+                  "Podrás realizar la administracion de usuarios siempre que lo desees desde la opcion de:",
+                  style: TextStyle(
+                    //ESTO HACE EL TEXTO RESPONSIVE
+                    fontSize: MediaQuery.of(context).size.width > 500
+                        ? 30
+                        : MediaQuery.of(context).size.width < 300
+                            ? 11
+                            : 15,
+                  ),
+                  textAlign: TextAlign.justify,
+                ),
+
+                Center(
+                  child: Expanded(
+                    child: SvgPicture.asset(
+                      'assets/slideUnoRepresentanteLegal.svg',
+                      height: 400,
+                      width: 2000,
+                      //fit: BoxFit.fitHeight,
+                    ),
+                  ),
+                )
+
+                //],
+                //)
+              ],
+            ),
+          ],
+        ),
+      ),
+      width: MediaQuery.of(context).size.width,
+      height: MediaQuery.of(context).size.height,
+    );
+  }
+}
+
+class pageTwo extends StatefulWidget {
+  const pageTwo({super.key});
+
+  @override
+  State<pageTwo> createState() => _pageTwoState();
+}
+
+class _pageTwoState extends State<pageTwo> {
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      child: Padding(
+        padding: const EdgeInsets.fromLTRB(20, 25, 20, 25),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            Row(
+              //-------------------------BARRA DE PROGRESO-------------
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 Barra_A(
                   varColor: 1,
@@ -69,27 +159,54 @@ class _pageOneState extends State<pageOne> {
             SizedBox(
               height: 45,
             ),
-            Row(
+            Column(
               mainAxisAlignment: MainAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
                   "Bievenido",
                   style: TextStyle(
-                    fontSize: 40,
+                    fontSize: MediaQuery.of(context).size.width > 500
+                        ? 60
+                        : MediaQuery.of(context).size.width < 300
+                            ? 30
+                            : 40,
                     color: Color.fromRGBO(18, 71, 25, 01),
                   ),
                 ),
+                Text(
+                  "Además de gestionar tus transacciones, también podrás integrara tu equipo de trabajo",
+                  style: TextStyle(
+                    //ESTO HACE EL TEXTO RESPONSIVE
+                    fontSize: MediaQuery.of(context).size.width > 500
+                        ? 30
+                        : MediaQuery.of(context).size.width < 300
+                            ? 11
+                            : 15,
+                  ),
+                  textAlign: TextAlign.justify,
+                ),
+
+                Center(
+                  child: Expanded(
+                    child: SvgPicture.asset(
+                      'assets/slideUnoRepresentanteLegal.svg',
+                      height: 400,
+                      width: 2000,
+                      //fit: BoxFit.fitHeight,
+                    ),
+                  ),
+                )
+
+                //],
+                //)
               ],
             ),
-            Row(
-              children: [
-                Text(
-                    "Además de gestionar tus transacciones, también podrás integrara tu equipo de trabajo")
-              ],
-            )
           ],
         ),
       ),
+      width: MediaQuery.of(context).size.width,
+      height: MediaQuery.of(context).size.height,
     );
   }
 }
