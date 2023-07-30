@@ -24,10 +24,12 @@ class _AvisoPageState extends State<AvisoPage> {
       ),
 
       body: Center(
-        // Inicio del manejo del ListView
+        // Inicio del manejo del ListView o PageView
         child: PageView(
           physics: ScrollPhysics(), // animacion al llegar al final de la lista
           scrollDirection: Axis.horizontal, // Mover la lista en horizontal
+
+          // Llamada de cada pantalla
           children: [
             buildCard_1(),
             
@@ -45,7 +47,8 @@ class _AvisoPageState extends State<AvisoPage> {
     Container(
       child: Center(
         child: Padding(
-          padding: EdgeInsets.fromLTRB(12, 20, 12, 20),
+          // Padding de separacion entre el contenido y los bordes del celular
+          padding: EdgeInsets.fromLTRB(20, 20, 20, 20),
           child: Column(
             //mainAxisAlignment: MainAxisAlignment.spaceBetween,
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -118,20 +121,19 @@ class _AvisoPageState extends State<AvisoPage> {
       /*
     decoration: BoxDecoration(
       color: Colors.red,
-    
     ), */
     /* Definir parametro principal del largo y alto de la 
     pantalla para el contenido*/
     width: MediaQuery.of(context).size.width,
     height: MediaQuery.of(context).size.height,
-    
   );
 
+  // Widget de la segunda pantalla
   Widget buildCard_2() => 
     Container(
       child: Center(
         child: Padding(
-          padding: EdgeInsets.fromLTRB(12, 20, 12, 20),
+          padding: EdgeInsets.fromLTRB(20, 20, 20, 20),
           child: Column(
             //mainAxisAlignment: MainAxisAlignment.spaceBetween,
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -183,7 +185,12 @@ class _AvisoPageState extends State<AvisoPage> {
                       height: 17,
                     ),
 
-                    textoEtiqueta("Más- Administración de usuarios"),
+                    textoEtiqueta("Más- Administración de usuarios", 
+                    MediaQuery.of(context).size.width > 1000? 30
+                    : MediaQuery.of(context).size.width > 800? 26
+                    : MediaQuery.of(context).size.width > 600? 22
+                    : MediaQuery.of(context).size.width > 400? 18 
+                    : 14,),
                   ],
                 ),
               ),
@@ -200,7 +207,6 @@ class _AvisoPageState extends State<AvisoPage> {
                   width: 200,
                 ),
               ),
-              
             ]
           ),
         ),
@@ -209,17 +215,19 @@ class _AvisoPageState extends State<AvisoPage> {
     height: MediaQuery.of(context).size.height,
   );
 
+  // Widget de la tercera pantalla
   Widget buildCard_3() => 
     Container(
       child: Center(
         child: Padding(
-          padding: EdgeInsets.fromLTRB(12, 20, 12, 20),
+          padding: EdgeInsets.fromLTRB(20, 20, 20, 20),
           child: Column(
             //mainAxisAlignment: MainAxisAlignment.spaceBetween,
             crossAxisAlignment: CrossAxisAlignment.start,
         
             children: <Widget>[
-        
+              
+              // Manejo de cada barra de progreso
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 crossAxisAlignment: CrossAxisAlignment.center,
@@ -238,6 +246,7 @@ class _AvisoPageState extends State<AvisoPage> {
                 height: MediaQuery.of(context).size.height * 0.06,
               ),
 
+              // Manejo de los textos
               Container(
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
@@ -251,7 +260,7 @@ class _AvisoPageState extends State<AvisoPage> {
                     : 18,),
 
                     SizedBox(
-                      height: MediaQuery.of(context).size.height * 0.03,
+                      height: 17,
                     ),
         
                     textoCuerpo("Podrás crear usuarios, activarlos, inactivarlos y editarlos", 
@@ -265,21 +274,22 @@ class _AvisoPageState extends State<AvisoPage> {
               ),
 
               SizedBox(
-                height: MediaQuery.of(context).size.height * 0.12,
+                height: MediaQuery.of(context).size.height * 0.06,
               ),
 
-              Center(
                 // Llamado de la imagen
+              Center(
                 child: SvgPicture.asset( 
                   'assets/imageThree.svg',
-                  width: 300,
+                  width: 400,
                 ),
               ),
 
               SizedBox(
-                height: MediaQuery.of(context).size.height * 0.16,
+                height: MediaQuery.of(context).size.height * 0.12,
               ),
-              
+
+              // Manejo de los botones 
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 crossAxisAlignment: CrossAxisAlignment.center,

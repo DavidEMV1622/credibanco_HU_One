@@ -48,13 +48,13 @@ Widget subtituloDos(String texto, double fontSizeText) {
 }
 
 // Widget del texto Etiqueta
-Widget textoEtiqueta(String texto) {
+Widget textoEtiqueta(String texto, double fontSizeText) {
   return Container(
     child: Text(
       texto,
       style: TextStyle(
         color: CustomColors.colorNegro,
-        fontSize: 14, 
+        fontSize: fontSizeText, 
         fontWeight: FontWeight.bold,
       ),
       textAlign: TextAlign.start,
