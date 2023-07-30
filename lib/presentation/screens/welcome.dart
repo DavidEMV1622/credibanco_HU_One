@@ -1,3 +1,4 @@
+import 'package:credibanco_hu_aca_1715/presentation/widgets/buttons.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
@@ -27,10 +28,7 @@ class _WelcomeViewState extends State<WelcomeView> {
             child: pageOne(),
           ),
           //------------------Conteiner #2-----------------
-          Container(
-              child: Column(
-            children: [],
-          ))
+          Container(child: pageTwo())
         ],
       ),
     );
@@ -45,93 +43,6 @@ class pageOne extends StatefulWidget {
 }
 
 class _pageOneState extends State<pageOne> {
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      child: Padding(
-        padding: const EdgeInsets.fromLTRB(20, 25, 20, 25),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            Row(
-              //-------------------------BARRA DE PROGRESO-------------
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                Barra_A(
-                  varColor: 1,
-                ),
-                Barra_A(
-                  varColor: 1,
-                ),
-                Barra_A(
-                  varColor: 0,
-                ),
-              ],
-            ),
-            SizedBox(
-              height: 45,
-            ),
-            Column(
-              mainAxisAlignment: MainAxisAlignment.start,
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  "Bievenido",
-                  style: TextStyle(
-                    fontSize: MediaQuery.of(context).size.width > 500
-                        ? 60
-                        : MediaQuery.of(context).size.width < 300
-                            ? 30
-                            : 40,
-                    color: Color.fromRGBO(18, 71, 25, 01),
-                  ),
-                ),
-                Text(
-                  "Podrás realizar la administracion de usuarios siempre que lo desees desde la opcion de:",
-                  style: TextStyle(
-                    //ESTO HACE EL TEXTO RESPONSIVE
-                    fontSize: MediaQuery.of(context).size.width > 500
-                        ? 30
-                        : MediaQuery.of(context).size.width < 300
-                            ? 11
-                            : 15,
-                  ),
-                  textAlign: TextAlign.justify,
-                ),
-
-                Center(
-                  child: Expanded(
-                    child: SvgPicture.asset(
-                      'assets/slideUnoRepresentanteLegal.svg',
-                      height: 400,
-                      width: 2000,
-                      //fit: BoxFit.fitHeight,
-                    ),
-                  ),
-                )
-
-                //],
-                //)
-              ],
-            ),
-          ],
-        ),
-      ),
-      width: MediaQuery.of(context).size.width,
-      height: MediaQuery.of(context).size.height,
-    );
-  }
-}
-
-class pageTwo extends StatefulWidget {
-  const pageTwo({super.key});
-
-  @override
-  State<pageTwo> createState() => _pageTwoState();
-}
-
-class _pageTwoState extends State<pageTwo> {
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -196,6 +107,185 @@ class _pageTwoState extends State<pageTwo> {
                       //fit: BoxFit.fitHeight,
                     ),
                   ),
+                )
+
+                //],
+                //)
+              ],
+            ),
+          ],
+        ),
+      ),
+      width: MediaQuery.of(context).size.width,
+      height: MediaQuery.of(context).size.height,
+    );
+  }
+}
+
+class pageTwo extends StatefulWidget {
+  const pageTwo({super.key});
+
+  @override
+  State<pageTwo> createState() => _pageTwoState();
+}
+
+class _pageTwoState extends State<pageTwo> {
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      child: Padding(
+        padding: const EdgeInsets.fromLTRB(20, 25, 20, 25),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            Row(
+              //-------------------------BARRA DE PROGRESO-------------
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                Barra_A(
+                  varColor: 1,
+                ),
+                Barra_A(
+                  varColor: 1,
+                ),
+                Barra_A(
+                  varColor: 0,
+                ),
+              ],
+            ),
+            SizedBox(
+              height: 45,
+            ),
+            Column(
+              mainAxisAlignment: MainAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  "Bievenido",
+                  style: TextStyle(
+                    fontSize: MediaQuery.of(context).size.width > 500
+                        ? 60
+                        : MediaQuery.of(context).size.width < 300
+                            ? 30
+                            : 40,
+                    color: Color.fromRGBO(18, 71, 25, 01),
+                  ),
+                ),
+                Text(
+                  "Podrás realizar la administracion de usuarios siempre que lo desees desde la opcion de:",
+                  style: TextStyle(
+                    //ESTO HACE EL TEXTO RESPONSIVE
+                    fontSize: MediaQuery.of(context).size.width > 500
+                        ? 30
+                        : MediaQuery.of(context).size.width < 300
+                            ? 11
+                            : 15,
+                  ),
+                  textAlign: TextAlign.justify,
+                ),
+
+                Center(
+                  child: Expanded(
+                    child: SvgPicture.asset(
+                      'assets/imageTwo.svg',
+                      height: 400,
+                      width: 2000,
+                      //fit: BoxFit.fitHeight,
+                    ),
+                  ),
+                )
+
+                //],
+                //)
+              ],
+            ),
+          ],
+        ),
+      ),
+      width: MediaQuery.of(context).size.width,
+      height: MediaQuery.of(context).size.height,
+    );
+  }
+}
+
+class pageThree extends StatefulWidget {
+  const pageThree({super.key});
+
+  @override
+  State<pageThree> createState() => _pageThreeState();
+}
+
+class _pageThreeState extends State<pageThree> {
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      child: Padding(
+        padding: const EdgeInsets.fromLTRB(20, 25, 20, 25),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            Row(
+              //-------------------------BARRA DE PROGRESO-------------
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                Barra_A(
+                  varColor: 1,
+                ),
+                Barra_A(
+                  varColor: 1,
+                ),
+                Barra_A(
+                  varColor: 1,
+                ),
+              ],
+            ),
+            SizedBox(
+              height: 45,
+            ),
+            Column(
+              mainAxisAlignment: MainAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  "Bievenido",
+                  style: TextStyle(
+                    fontSize: MediaQuery.of(context).size.width > 500
+                        ? 60
+                        : MediaQuery.of(context).size.width < 300
+                            ? 30
+                            : 40,
+                    color: Color.fromRGBO(18, 71, 25, 01),
+                  ),
+                ),
+                Text(
+                  "Podrás crear usuarios, activarlos, inactivarlos y editarlos",
+                  style: TextStyle(
+                    //ESTO HACE EL TEXTO RESPONSIVE
+                    fontSize: MediaQuery.of(context).size.width > 500
+                        ? 30
+                        : MediaQuery.of(context).size.width < 300
+                            ? 11
+                            : 15,
+                  ),
+                  textAlign: TextAlign.justify,
+                ),
+
+                Center(
+                  child: Expanded(
+                    child: SvgPicture.asset(
+                      'assets/imageThree.svg',
+                      height: 400,
+                      width: 2000,
+                      //fit: BoxFit.fitHeight,
+                    ),
+                  ),
+                ),
+                Row(
+                  children: [
+                    BtnPrimaery(textButton: "Omitir", colorBox: colorBox, border: ,)
+                  ],
                 )
 
                 //],
