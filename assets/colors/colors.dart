@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 
-import 'package:flutter/material.dart';
-
 // Clase "CustomColors" para definir cada color
 class CustomColors {
   static const Color colorVerdePantano = Color.fromRGBO(0, 175, 170, 1);

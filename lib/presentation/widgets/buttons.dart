@@ -6,12 +6,14 @@ class BtnPrimaery extends StatelessWidget {
   final Color colorBox;
   final BoxBorder? border;
   final void Function()? onPressed;
+  final double whitMedid;
   const BtnPrimaery(
       {super.key,
       required this.textButton,
       required this.colorBox,
       this.border,
-      this.onPressed});
+      this.onPressed,
+      required this.whitMedid});
 
   //IMPLEMENTACION DE VARIABLES
   @override
@@ -24,13 +26,13 @@ class BtnPrimaery extends StatelessWidget {
         borderRadius: BorderRadius.circular(10), // Borde del campo
       ),
       child: MaterialButton(
-        minWidth:
-            double.infinity, // largo del botonque abarque toda la pantalla
-        height: 60, // Ancho del boton
+        minWidth: whitMedid,
+        // largo del botonque abarque toda la pantalla
+        height: 40, // Ancho del boton
 
         onPressed: onPressed, // Evento al presionar el boton
 
-        padding: EdgeInsets.symmetric(horizontal: 30, vertical: 20),
+        padding: EdgeInsets.symmetric(horizontal: 10, vertical: 20),
 
         // Agregar texto dentro del boton
         child: Text(

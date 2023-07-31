@@ -24,11 +24,9 @@ class _WelcomeViewState extends State<WelcomeView> {
         scrollDirection: Axis.horizontal,
         children: <Widget>[
           //------------------Conteiner #1-----------------
-          Container(
-            child: pageOne(),
-          ),
+          Container(child: pageThree()),
           //------------------Conteiner #2-----------------
-          Container(child: pageTwo())
+          //  Container(child: pageOne())
         ],
       ),
     );
@@ -172,6 +170,9 @@ class _pageTwoState extends State<pageTwo> {
                     color: Color.fromRGBO(18, 71, 25, 01),
                   ),
                 ),
+                SizedBox(
+                  height: 13,
+                ),
                 Text(
                   "Podrás realizar la administracion de usuarios siempre que lo desees desde la opcion de:",
                   style: TextStyle(
@@ -185,12 +186,25 @@ class _pageTwoState extends State<pageTwo> {
                   textAlign: TextAlign.justify,
                 ),
 
+                SizedBox(
+                  height: 13,
+                ),
+                Text(
+                  "Más-Administracion de usuarios",
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+
+                SizedBox(
+                  height: 38,
+                ),
                 Center(
                   child: Expanded(
                     child: SvgPicture.asset(
-                      'assets/imageTwo.svg',
-                      height: 400,
-                      width: 2000,
+                      'assets/imagetwo.svg',
+                      height: 450,
+                      width: 2100,
                       //fit: BoxFit.fitHeight,
                     ),
                   ),
@@ -225,6 +239,7 @@ class _pageThreeState extends State<pageThree> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
+            //------BARRA DE PROGRESO
             Row(
               //-------------------------BARRA DE PROGRESO-------------
               mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -242,8 +257,9 @@ class _pageThreeState extends State<pageThree> {
               ],
             ),
             SizedBox(
-              height: 45,
+              height: 33.5,
             ),
+
             Column(
               mainAxisAlignment: MainAxisAlignment.start,
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -259,8 +275,11 @@ class _pageThreeState extends State<pageThree> {
                     color: Color.fromRGBO(18, 71, 25, 01),
                   ),
                 ),
+                SizedBox(
+                  height: 14,
+                ),
                 Text(
-                  "Podrás crear usuarios, activarlos, inactivarlos y editarlos",
+                  "Podrás crear usuarios, activarlos, inactivarlos y editarlos:",
                   style: TextStyle(
                     //ESTO HACE EL TEXTO RESPONSIVE
                     fontSize: MediaQuery.of(context).size.width > 500
@@ -271,27 +290,43 @@ class _pageThreeState extends State<pageThree> {
                   ),
                   textAlign: TextAlign.justify,
                 ),
-
                 Center(
-                  child: Expanded(
-                    child: SvgPicture.asset(
-                      'assets/imageThree.svg',
-                      height: 400,
-                      width: 2000,
-                      //fit: BoxFit.fitHeight,
-                    ),
+                  //child: Expanded(
+                  child: SvgPicture.asset(
+                    'assets/imageThree.svg',
+                    height: 450,
+                    width: 2100,
+                    //fit: BoxFit.fitHeight,
                   ),
+                  //),
                 ),
-                Row(
-                  children: [
-                    BtnPrimaery(textButton: "Omitir", colorBox: colorBox, border: ,)
-                  ],
-                )
-
-                //],
-                //)
               ],
             ),
+            SizedBox(
+              height: 50,
+            ),
+            Row(
+              crossAxisAlignment: CrossAxisAlignment.end,
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                BtnPrimaery(
+                  textButton: "Omitir",
+                  colorBox: Colors.white,
+                  whitMedid: 188,
+                  border: Border.all(width: 2),
+                  onPressed: () => [],
+                ),
+                SizedBox(
+                  width: 15,
+                ),
+                BtnPrimaery(
+                  textButton: "Continuar",
+                  colorBox: Color.fromRGBO(255, 182, 0, 1),
+                  whitMedid: 188,
+                  onPressed: () => [],
+                ),
+              ],
+            )
           ],
         ),
       ),
