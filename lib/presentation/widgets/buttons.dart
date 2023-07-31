@@ -25,11 +25,11 @@ class BtnPrimaery extends StatelessWidget {
       ),
       child: MaterialButton(
         minWidth: MediaQuery.of(context).size.width * 0.40, // largo del botonque abarque toda la pantalla
-        //height: 60, // Ancho del boton
+        //height: 40, // Ancho del boton
 
         onPressed: onPressed, // Evento al presionar el boton
 
-        padding: EdgeInsets.symmetric(horizontal: 30, vertical: 20),
+        padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
 
         // Agregar texto dentro del boton
         child: Text(

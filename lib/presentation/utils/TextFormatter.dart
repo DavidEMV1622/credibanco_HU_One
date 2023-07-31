@@ -37,7 +37,6 @@ Widget subtituloDos(String texto, double fontSizeText) {
     child: Text(
       texto,
       style: TextStyle(
-        //fontSize: 18,
         fontSize: fontSizeText,
         color: CustomColors.colorVerdeOscuroFuerte,
         fontWeight: FontWeight.bold,

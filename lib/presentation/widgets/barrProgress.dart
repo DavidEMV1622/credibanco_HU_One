@@ -17,7 +17,8 @@ class _ProgressBarrState extends State<ProgressBarr> {
   Widget build(BuildContext context) {
     return SizedBox(
       // Toma todo el largo de la pantalla y se multiplica por el 28%
-      width: MediaQuery.of(context).size.width * 0.28,
+      //width: MediaQuery.of(context).size.width * 0.28,
+      //width: double.infinity,
       height: 4.5, // ancho de la barra de progreso
 
       // Widget "ClipRRect" para redondear las esquinas del hijo
