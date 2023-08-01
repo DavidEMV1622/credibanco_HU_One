@@ -30,20 +30,7 @@ class _AvisoPageState extends State<AvisoPage> {
         child: Column(
           children: [
             Text("$page"),
-            Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                crossAxisAlignment: CrossAxisAlignment.center,
-                
-                
-                children: [
-                  // Llamada de la bara de progreso 1
-                  Expanded(child: ProgressBarr(valor: page.toDouble())),
-                  // Llamada de la bara de progreso 2
-                  Expanded(child: ProgressBarr(valor: page.toDouble())),
-                  // Llamada de la bara de progreso 3
-                  Expanded(child: ProgressBarr(valor: page.toDouble())),
-                ],
-              ),
+            ProgressBarr(pageActual: page, cantidadBarr: 3,),
             Expanded(
               child: PageView(
                 
@@ -112,7 +99,7 @@ class _AvisoPageState extends State<AvisoPage> {
             children: <Widget>[
               
               // Controlar cada barra de progreso en una fila
-              Row(
+              /*Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 crossAxisAlignment: CrossAxisAlignment.center,
                 
@@ -125,7 +112,7 @@ class _AvisoPageState extends State<AvisoPage> {
                   Expanded(child: ProgressBarr(valor: 0)),
                 ],
               ),
-
+              */
               SizedBox(
                 height: MediaQuery.of(context).size.height * 0.06,
               ),
@@ -185,7 +172,7 @@ class _AvisoPageState extends State<AvisoPage> {
             crossAxisAlignment: CrossAxisAlignment.start,
         
             children: <Widget>[
-        
+              /*
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 crossAxisAlignment: CrossAxisAlignment.center,
@@ -199,7 +186,7 @@ class _AvisoPageState extends State<AvisoPage> {
                   Expanded(child: ProgressBarr(valor: 0)),
                 ],
               ),
-
+              */
               SizedBox(
                 height: MediaQuery.of(context).size.height * 0.06,
               ),
@@ -266,10 +253,11 @@ class _AvisoPageState extends State<AvisoPage> {
             children: <Widget>[
               
               // Manejo de cada barra de progreso
+              /*
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 crossAxisAlignment: CrossAxisAlignment.center,
-                
+              
                 children: [
                   // Llamada de la bara de progreso 1
                   Expanded(child: ProgressBarr(valor: 1)),
@@ -279,7 +267,7 @@ class _AvisoPageState extends State<AvisoPage> {
                   Expanded(child: ProgressBarr(valor: 1)),
                 ],
               ),
-
+              */
               SizedBox(
                 height: MediaQuery.of(context).size.height * 0.06,
               ),
