@@ -50,18 +50,24 @@ class _BarProgresState extends State<BarProgres> {
 
 class Barra_A extends StatefulWidget {
   final double varColor;
+  //final double cantidad;
+  //final double lineActual;
 
-  Barra_A({super.key, required this.varColor});
+  Barra_A({
+    super.key,
+    required this.varColor,
+    /*required this.cantidad, required this.lineActual*/
+  });
 
   @override
   State<Barra_A> createState() => _Barra_AState();
 }
 
 class _Barra_AState extends State<Barra_A> {
-  @override
+  @override //LIST VIEW BUILDER
   Widget build(BuildContext context) {
     return SizedBox(
-      width: MediaQuery.of(context).size.width * 0.30,
+      //  width: MediaQuery.of(context).size.width * 0.30,
       height: 15,
       child: ClipRRect(
         borderRadius: BorderRadius.all(Radius.circular(12)),

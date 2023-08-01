@@ -1,3 +1,4 @@
+import 'package:credibanco_hu_aca_1715/presentation/screens/homeRepreLegalPrimera.dart';
 import 'package:credibanco_hu_aca_1715/presentation/widgets/buttons.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -17,16 +18,36 @@ class _WelcomeViewState extends State<WelcomeView> {
     return Scaffold(
       appBar: AppBar(
         elevation: 0,
-        backgroundColor: Color.fromARGB(255, 255, 255, 255),
+        backgroundColor: const Color.fromARGB(255, 255, 255, 255),
       ),
       body: PageView(
         physics: BouncingScrollPhysics(),
         scrollDirection: Axis.horizontal,
         children: <Widget>[
           //------------------Conteiner #1-----------------
-          Container(child: pageThree()),
+          Container(
+              child: pageRLPV(
+            title: "Bienvenido",
+            textParrafo:
+                "Además de gestionar tus transacciones, también podrás integrar a tu equipo de trabajo",
+            directionImage: "assets/slideUnoRepresentanteLegal.svg",
+          )),
           //------------------Conteiner #2-----------------
-          //  Container(child: pageOne())
+          Container(
+              child: pageRLPV(
+            title: "Bienvenido",
+            textParrafo:
+                "Podrás realizar la administración de usuarios siempre que lo desees desde la opción de: ",
+            subTitle: "Más- Adminitración de usuarios",
+            directionImage: "assets/imagetwo.svg",
+          )),
+          Container(
+              child: pageRLPV(
+            title: "Bienvenido",
+            textParrafo:
+                "Podrás crear usuarios, activarlos, inactivarlos y editarlos",
+            directionImage: "assets/imageThree.svg",
+          ))
         ],
       ),
     );
@@ -141,14 +162,31 @@ class _pageTwoState extends State<pageTwo> {
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                Barra_A(
-                  varColor: 1,
+                Expanded(
+                  // ESTE EXPANDED NOS AYUDA A PUEDAN OCUPAR TODO LO NECESARIO
+                  child: Barra_A(
+                    varColor: 1,
+                  ),
                 ),
-                Barra_A(
-                  varColor: 1,
+                Expanded(
+                  child: Barra_A(
+                    varColor: 0,
+                  ),
                 ),
-                Barra_A(
-                  varColor: 0,
+                Expanded(
+                  child: Barra_A(
+                    varColor: 1,
+                  ),
+                ),
+                Expanded(
+                  child: Barra_A(
+                    varColor: 1,
+                  ),
+                ),
+                Expanded(
+                  child: Barra_A(
+                    varColor: 1,
+                  ),
                 ),
               ],
             ),
