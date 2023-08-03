@@ -24,17 +24,17 @@ class BtnPrimaery extends StatelessWidget {
         borderRadius: BorderRadius.circular(10), // Borde del campo
       ),
       child: MaterialButton(
-        minWidth: MediaQuery.of(context).size.width * 0.40, // largo del botonque abarque toda la pantalla
+        minWidth: MediaQuery.of(context).size.width * 0.40, // largo del boton para que abarque toda la pantalla
         //height: 40, // Ancho del boton
 
         onPressed: onPressed, // Evento al presionar el boton
 
-        padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+        padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
 
         // Agregar texto dentro del boton
         child: Text(
           textButton,
-          style: TextStyle(
+          style: const TextStyle(
             fontSize: 16,
             fontWeight: FontWeight.bold,
           ),

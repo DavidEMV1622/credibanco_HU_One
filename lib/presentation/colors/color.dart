@@ -55,8 +55,4 @@ class CustomColors {
       Color.fromRGBO(18, 71, 52, 1);
   static const Color tonoVerde_3 = 
       Color.fromRGBO(149, 202, 183, 1);
-
-  // Colores con opacidad
-  static const Color tonoCeleste_2_Opacity = 
-      Color.fromRGBO(0, 175, 170, 60);
 }

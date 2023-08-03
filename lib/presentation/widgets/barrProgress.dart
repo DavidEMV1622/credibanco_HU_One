@@ -1,7 +1,7 @@
-import 'package:flutter/material.dart';
+// ignore_for_file: file_names
 
+import 'package:flutter/material.dart';
 import '../colors/color.dart';
-import '../screens/listOfElements.dart';
 
 class ProgressBarr extends StatefulWidget {
   final int pageActual;
@@ -39,52 +39,29 @@ class _ProgressBarrState extends State<ProgressBarr> {
       ),
     );
     */
-        Container(
-          width: double.infinity,
-          height: 10,
-          /*
-          decoration: BoxDecoration(
-            color: Colors.green,
-          ),
-          */
-          child: ListView.builder(
-            scrollDirection: Axis.horizontal,
-            itemCount: widget.cantidadBarr,
-            itemBuilder: (context, index) {
-              return Container(
-                height: 4.5,
-                width: MediaQuery.of(context).size.width * 0.32,
-                margin: EdgeInsets.symmetric(horizontal: 13.0), 
-                decoration: BoxDecoration(
-                  color: widget.pageActual < index ?  CustomColors.colorGris_3 : CustomColors.colorVerdePantano,
-                  borderRadius: BorderRadius.circular(12)
-                ),
-              );
-            },
-          ),
-        );
-  }
-
-
-}
-
-/*
-class ListViewElementsPage extends StatelessWidget {
-
-  const ListViewElementsPage({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return ListView.builder(
-      itemCount: 3,
-      itemBuilder: (BuildContext context, int index) {
-        if (index <= 1) {
-          return CustomColors.colorAmarilloMostaza;
-        } else {
-          return CustomColors.colorNegro;
-        }
-      },
+    SizedBox(
+      width: MediaQuery.of(context).size.width,
+      height: 10,
+      
+      // decoration: BoxDecoration(
+      //   color: Colors.green,
+      // ),
+      
+      child: ListView.builder(
+        scrollDirection: Axis.horizontal,
+        itemCount: widget.cantidadBarr,
+        itemBuilder: (context, index) {
+          return Container(
+            height: 4.5,
+            width: (MediaQuery.of(context).size.width),
+            margin: const EdgeInsets.symmetric(horizontal: 0.0), 
+            decoration: BoxDecoration(
+              color: widget.pageActual < index ?  CustomColors.colorGris_3 : CustomColors.colorVerdePantano,
+              borderRadius: BorderRadius.circular(12)
+            ),
+          );
+        },
+      ),
     );
   }
-  
-}*/
+}
