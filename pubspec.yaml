@@ -78,6 +78,9 @@ flutter:
     - family: Pixel
       fonts:
         - asset: fonts/gbb__.ttf
+    - family: Gilroy_Bold
+      fonts:
+        - asset: gilroy-bold.ttf
   #   - family: Trajan Pro
   #     fonts:
   #       - asset: fonts/TrajanPro.ttf
