@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../widgets/BarProgress.dart';
 import 'welcome.dart';
 
 class MyApp extends StatelessWidget {
@@ -11,5 +12,6 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       home: Center(child: WelcomeView()),
     );
+    //DESPUES DE ALMUERXZO PROBAR CON UN SCAFFOLD
   }
 }

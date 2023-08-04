@@ -1,6 +1,7 @@
 import 'package:credibanco_hu_aca_1715/presentation/screens/homeRepreLegalPrimera.dart';
 import 'package:credibanco_hu_aca_1715/presentation/widgets/buttons.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 import '../widgets/BarProgress.dart';
@@ -13,6 +14,7 @@ class WelcomeView extends StatefulWidget {
 }
 
 class _WelcomeViewState extends State<WelcomeView> {
+  int page = 0;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -20,356 +22,107 @@ class _WelcomeViewState extends State<WelcomeView> {
         elevation: 0,
         backgroundColor: const Color.fromARGB(255, 255, 255, 255),
       ),
-      body: PageView(
-        physics: BouncingScrollPhysics(),
-        scrollDirection: Axis.horizontal,
-        children: <Widget>[
-          //------------------Conteiner #1-----------------
-          Container(
-              child: pageRLPV(
-            title: "Bienvenido",
-            textParrafo:
-                "Además de gestionar tus transacciones, también podrás integrar a tu equipo de trabajo",
-            directionImage: "assets/slideUnoRepresentanteLegal.svg",
-          )),
-          //------------------Conteiner #2-----------------
-          Container(
-              child: pageRLPV(
-            title: "Bienvenido",
-            textParrafo:
-                "Podrás realizar la administración de usuarios siempre que lo desees desde la opción de: ",
-            subTitle: "Más- Adminitración de usuarios",
-            directionImage: "assets/imagetwo.svg",
-          )),
-          Container(
-              child: pageRLPV(
-            title: "Bienvenido",
-            textParrafo:
-                "Podrás crear usuarios, activarlos, inactivarlos y editarlos",
-            directionImage: "assets/imageThree.svg",
-          ))
-        ],
-      ),
-    );
-  }
-}
-
-class pageOne extends StatefulWidget {
-  const pageOne({super.key});
-
-  @override
-  State<pageOne> createState() => _pageOneState();
-}
-
-class _pageOneState extends State<pageOne> {
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      child: Padding(
-        padding: const EdgeInsets.fromLTRB(20, 25, 20, 25),
+      body: Center(
         child: Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            Row(
-              //-------------------------BARRA DE PROGRESO-------------
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                Barra_A(
-                  varColor: 1,
-                ),
-                Barra_A(
-                  varColor: 0,
-                ),
-                Barra_A(
-                  varColor: 0,
-                ),
-              ],
+            Barra(
+              actual: page,
+              cantidad: 3,
+              mainColor: Color(0xFFCFCCD3),
+              secondColor: Color(0xFF0AA49F),
             ),
-            SizedBox(
-              height: 45,
-            ),
-            Column(
-              mainAxisAlignment: MainAxisAlignment.start,
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  "Bievenido",
-                  style: TextStyle(
-                    fontSize: MediaQuery.of(context).size.width > 500
-                        ? 60
-                        : MediaQuery.of(context).size.width < 300
-                            ? 30
-                            : 40,
-                    color: Color.fromRGBO(18, 71, 25, 01),
-                  ),
-                ),
-                Text(
-                  "Además de gestionar tus transacciones, también podrás integrara tu equipo de trabajo",
-                  style: TextStyle(
-                    //ESTO HACE EL TEXTO RESPONSIVE
-                    fontSize: MediaQuery.of(context).size.width > 500
-                        ? 30
-                        : MediaQuery.of(context).size.width < 300
-                            ? 11
-                            : 15,
-                  ),
-                  textAlign: TextAlign.justify,
-                ),
-
-                Center(
-                  child: Expanded(
-                    child: SvgPicture.asset(
-                      'assets/slideUnoRepresentanteLegal.svg',
-                      height: 400,
-                      width: 2000,
-                      //fit: BoxFit.fitHeight,
-                    ),
-                  ),
-                )
-
-                //],
-                //)
-              ],
+            Expanded(
+              child: PageView(
+                physics: BouncingScrollPhysics(),
+                scrollDirection: Axis.horizontal,
+                onPageChanged: (currentpage) {
+                  setState(() {
+                    page = currentpage;
+                  });
+                },
+                children: <Widget>[
+                  ///------------------Conteiner #1-----------------
+                  Container(
+                      child: pageRLPV(
+                    title: "Bienvenido",
+                    textParrafo:
+                        "Además de gestionar tus transacciones, también podrás integrar a tu equipo de trabajo",
+                    directionImage: "assets/slideUnoRepresentanteLegal.svg",
+                  )),
+                  //------------------Conteiner #2-----------------
+                  Container(
+                      child: pageRLPV(
+                    title: "Bienvenido",
+                    textParrafo:
+                        "Podrás realizar la administración de usuarios siempre que lo desees desde la opción de: ",
+                    subTitle: "Más- Adminitración de usuarios",
+                    directionImage: "assets/imagetwo.svg",
+                  )),
+                  //-------------------Contein-----------------------
+                  Container(
+                      child: pageRLPV(
+                    title: "Bienvenido",
+                    textParrafo:
+                        "Podrás crear usuarios, activarlos, inactivarlos y editarlos",
+                    directionImage: "assets/imageThree.svg",
+                  ))
+                ],
+              ),
             ),
           ],
         ),
       ),
-      width: MediaQuery.of(context).size.width,
-      height: MediaQuery.of(context).size.height,
-    );
-  }
-}
-
-class pageTwo extends StatefulWidget {
-  const pageTwo({super.key});
-
-  @override
-  State<pageTwo> createState() => _pageTwoState();
-}
-
-class _pageTwoState extends State<pageTwo> {
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      child: Padding(
-        padding: const EdgeInsets.fromLTRB(20, 25, 20, 25),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            Row(
-              //-------------------------BARRA DE PROGRESO-------------
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                Expanded(
-                  // ESTE EXPANDED NOS AYUDA A PUEDAN OCUPAR TODO LO NECESARIO
-                  child: Barra_A(
-                    varColor: 1,
-                  ),
-                ),
-                Expanded(
-                  child: Barra_A(
-                    varColor: 0,
-                  ),
-                ),
-                Expanded(
-                  child: Barra_A(
-                    varColor: 1,
-                  ),
-                ),
-                Expanded(
-                  child: Barra_A(
-                    varColor: 1,
-                  ),
-                ),
-                Expanded(
-                  child: Barra_A(
-                    varColor: 1,
-                  ),
-                ),
-              ],
-            ),
-            SizedBox(
-              height: 45,
-            ),
-            Column(
-              mainAxisAlignment: MainAxisAlignment.start,
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  "Bievenido",
-                  style: TextStyle(
-                    fontSize: MediaQuery.of(context).size.width > 500
-                        ? 60
-                        : MediaQuery.of(context).size.width < 300
-                            ? 30
-                            : 40,
-                    color: Color.fromRGBO(18, 71, 25, 01),
-                  ),
-                ),
-                SizedBox(
-                  height: 13,
-                ),
-                Text(
-                  "Podrás realizar la administracion de usuarios siempre que lo desees desde la opcion de:",
-                  style: TextStyle(
-                    //ESTO HACE EL TEXTO RESPONSIVE
-                    fontSize: MediaQuery.of(context).size.width > 500
-                        ? 30
-                        : MediaQuery.of(context).size.width < 300
-                            ? 11
-                            : 15,
-                  ),
-                  textAlign: TextAlign.justify,
-                ),
-
-                SizedBox(
-                  height: 13,
-                ),
-                Text(
-                  "Más-Administracion de usuarios",
-                  style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
-
-                SizedBox(
-                  height: 38,
-                ),
-                Center(
-                  child: Expanded(
-                    child: SvgPicture.asset(
-                      'assets/imagetwo.svg',
-                      height: 450,
-                      width: 2100,
-                      //fit: BoxFit.fitHeight,
+      bottomNavigationBar: page == 2
+          ? Padding(
+              padding: const EdgeInsets.fromLTRB(33, 0, 33, 30),
+              child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    BtnPrimaery(
+                      textButton: "Omitir",
+                      colorBox: Color(0xFFFFFFFF),
+                      border: Border.all(width: 2),
+                      whitMedid: 188,
+                      onPressed: () => {},
                     ),
-                  ),
-                )
-
-                //],
-                //)
-              ],
-            ),
-          ],
-        ),
-      ),
-      width: MediaQuery.of(context).size.width,
-      height: MediaQuery.of(context).size.height,
+                    const SizedBox(
+                      width: 15,
+                    ),
+                    BtnPrimaery(
+                      textButton: "Continuar",
+                      colorBox: Color(0xFFFFB600),
+                      whitMedid: 188,
+                      onPressed: () {},
+                    ),
+                  ]),
+            )
+          : null,
     );
   }
 }
 
-class pageThree extends StatefulWidget {
-  const pageThree({super.key});
-
-  @override
-  State<pageThree> createState() => _pageThreeState();
-}
-
-class _pageThreeState extends State<pageThree> {
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      child: Padding(
-        padding: const EdgeInsets.fromLTRB(20, 25, 20, 25),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            //------BARRA DE PROGRESO
-            Row(
-              //-------------------------BARRA DE PROGRESO-------------
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                Barra_A(
-                  varColor: 1,
-                ),
-                Barra_A(
-                  varColor: 1,
-                ),
-                Barra_A(
-                  varColor: 1,
-                ),
-              ],
-            ),
-            SizedBox(
-              height: 33.5,
-            ),
-
-            Column(
-              mainAxisAlignment: MainAxisAlignment.start,
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  "Bievenido",
-                  style: TextStyle(
-                    fontSize: MediaQuery.of(context).size.width > 500
-                        ? 60
-                        : MediaQuery.of(context).size.width < 300
-                            ? 30
-                            : 40,
-                    color: Color.fromRGBO(18, 71, 25, 01),
-                  ),
-                ),
-                SizedBox(
-                  height: 14,
-                ),
-                Text(
-                  "Podrás crear usuarios, activarlos, inactivarlos y editarlos:",
-                  style: TextStyle(
-                    //ESTO HACE EL TEXTO RESPONSIVE
-                    fontSize: MediaQuery.of(context).size.width > 500
-                        ? 30
-                        : MediaQuery.of(context).size.width < 300
-                            ? 11
-                            : 15,
-                  ),
-                  textAlign: TextAlign.justify,
-                ),
-                Center(
-                  //child: Expanded(
-                  child: SvgPicture.asset(
-                    'assets/imageThree.svg',
-                    height: 450,
-                    width: 2100,
-                    //fit: BoxFit.fitHeight,
-                  ),
-                  //),
-                ),
-              ],
-            ),
-            SizedBox(
-              height: 50,
-            ),
-            Row(
-              crossAxisAlignment: CrossAxisAlignment.end,
+//----------------------------------------------------------------------//-------------------------------------------------------------
+/*        if (page == 2)
+          Row(
               mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 BtnPrimaery(
                   textButton: "Omitir",
-                  colorBox: Colors.white,
-                  whitMedid: 188,
+                  colorBox: Color.fromRGBO(255, 255, 255, 1),
                   border: Border.all(width: 2),
-                  onPressed: () => [],
+                  whitMedid: 188,
+                  onPressed: () => {},
                 ),
-                SizedBox(
+                const SizedBox(
                   width: 15,
                 ),
                 BtnPrimaery(
                   textButton: "Continuar",
-                  colorBox: Color.fromRGBO(255, 182, 0, 1),
+                  colorBox: Color(0xFFB600),
                   whitMedid: 188,
-                  onPressed: () => [],
+                  onPressed: () {},
                 ),
-              ],
-            )
-          ],
-        ),
-      ),
-      width: MediaQuery.of(context).size.width,
-      height: MediaQuery.of(context).size.height,
-    );
-  }
-}
+              ])
+ */
