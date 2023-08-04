@@ -17,50 +17,62 @@ class ProgressBarr extends StatefulWidget {
 class _ProgressBarrState extends State<ProgressBarr> {
   @override
   Widget build(BuildContext context) {
-    return
-        /* SizedBox(
-
-      // Toma todo el largo de la pantalla y se multiplica por el 28%
-      //width: MediaQuery.of(context).size.width * 0.28,
-      //width: double.infinity,
-      height: 4.5, // ancho de la barra de progreso
-
-      // Widget "ClipRRect" para redondear las esquinas del hijo
-      child: ClipRRect(
-        borderRadius: BorderRadius.all(Radius.circular(12)),
-        // Creacion de una linea de progreso
-        child: LinearProgressIndicator(
-          value: 1, // "0" vacio y "1" lleno
-          backgroundColor: CustomColors.colorGris_3, // Color del fondo
-          // Color de la barra con animacion
-          valueColor: AlwaysStoppedAnimation(),
-          minHeight: 10, // Grosor de la barra de progreso
-        ),
-      ),
-    );
-    */
-    SizedBox(
-      width: MediaQuery.of(context).size.width,
+    final size = MediaQuery.of(context).size;
+    return/*
+    Container(
+      width: size.width,
       height: 10,
       
-      // decoration: BoxDecoration(
-      //   color: Colors.green,
-      // ),
+      decoration: const BoxDecoration(
+        color: Colors.red,
+      ),
       
       child: ListView.builder(
         scrollDirection: Axis.horizontal,
         itemCount: widget.cantidadBarr,
-        itemBuilder: (context, index) {
+        itemBuilder: (BuildContext context, int index) {
           return Container(
             height: 4.5,
-            width: (MediaQuery.of(context).size.width),
-            margin: const EdgeInsets.symmetric(horizontal: 0.0), 
+            width: (size.width - ((widget.cantidadBarr - 1) * 10))/ widget.cantidadBarr,
+            margin:  EdgeInsets.only(right: index == (widget.cantidadBarr - 1) ? 0 : 10.0),
             decoration: BoxDecoration(
-              color: widget.pageActual < index ?  CustomColors.colorGris_3 : CustomColors.colorVerdePantano,
+              color: widget.pageActual <= index ?  CustomColors.colorGris_3 : Colors.red,
+              //color: widget.pageActual < index ?  Colors.transparent : Colors.transparent,
               borderRadius: BorderRadius.circular(12)
             ),
           );
-        },
+        }
+      ),
+    );*/
+
+    Padding(
+      padding: const EdgeInsets.fromLTRB(24, 8, 24, 0),
+      child: SizedBox(
+        width: size.width,
+        height: 10,
+
+        child: ListView.separated(
+          scrollDirection: Axis.horizontal,
+          itemCount: widget.cantidadBarr,
+          separatorBuilder: (context, index) => 
+            const SizedBox(
+              width: 10,
+            ),
+          
+          itemBuilder: (BuildContext context, index) => 
+            Container(
+              height: 4.5,
+              /* se resta la cantidad de barras a pitar - 1 para que no se agregue un espacio de 10 adicional en la 
+              ultima barra (widget.cantidadBarr - 1), despues se multiplica por el espacio que haber entre cada barra
+              segun el separatorBuilder que es 10 ((widget.cantidadBarr - 1) * 10, el resultado de la multiplicacion 
+              se resta con el ancho de la pantalla 100% (puede ser double o int) y asi to*/
+              width: ((size.width - ((widget.cantidadBarr - 1) * 10)) - 48) / widget.cantidadBarr,
+              decoration: BoxDecoration(
+                color: widget.pageActual < index ?  CustomColors.colorGris_4 : CustomColors.colorVerdePantano,
+                borderRadius: BorderRadius.circular(20),
+              ),
+            ),
+        ),
       ),
     );
   }

@@ -28,11 +28,13 @@ class _AvisoPageState extends State<AvisoPage> {
 
       body: Center(
         child: Column(
+          mainAxisAlignment: MainAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             //Text("$page"),
             ProgressBarr(pageActual: page, cantidadBarr: 3,),
 
-            // Inicio del manejo del ListView o PageView
+            // Inicio del manejo del PageView
             Expanded(
               child: PageView(
                 
@@ -43,7 +45,7 @@ class _AvisoPageState extends State<AvisoPage> {
                 },
 
                 physics: const ScrollPhysics(), // animacion al llegar al final de la lista
-                scrollDirection: Axis.horizontal, // Mover la lista en horizontal
+                scrollDirection: Axis.horizontal, // Mover el slide en horizontal
             
                 // Llamada de cada pantalla
                 children: [

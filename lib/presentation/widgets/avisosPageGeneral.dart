@@ -25,16 +25,16 @@ class AvisosPageGeneral extends StatelessWidget {
       child: Center(
         child: Padding(
           // Padding de separacion entre el contenido y los bordes del celular
-          padding: const EdgeInsets.fromLTRB(20, 20, 20, 20),
+          padding: const EdgeInsets.fromLTRB(24, 33, 24, 24),
           child: Column(
             //mainAxisAlignment: MainAxisAlignment.spaceBetween,
             crossAxisAlignment: CrossAxisAlignment.start,
         
             children: <Widget>[
 
-              SizedBox(
-                height: MediaQuery.of(context).size.height * 0.04,
-              ),
+              // SizedBox(
+              //   height: MediaQuery.of(context).size.height * 0.04,
+              // ),
               subtituloDos(subtituloDosGeneral, 
               MediaQuery.of(context).size.width > 1000? 34
               : MediaQuery.of(context).size.width > 800? 30 
