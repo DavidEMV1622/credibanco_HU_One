@@ -12,13 +12,19 @@ class AvisosPageGeneral extends StatelessWidget {
   final String? textoEtiquetaGeneral;
   final SvgPicture imageGeneral;
 
-  const AvisosPageGeneral({super.key, required this.subtituloDosGeneral, required this.textoCuerpoGeneral, this.textoEtiquetaGeneral, required this.imageGeneral});
+  const AvisosPageGeneral({
+    super.key, 
+    required this.subtituloDosGeneral,
+    required this.textoCuerpoGeneral, 
+    this.textoEtiquetaGeneral, 
+    required this.imageGeneral
+  });
 
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      /* Definir parametro principal del largo y alto de la 
-      pantalla para el contenido*/
+      /* Definir parametro principal del largo y alto de toda la 
+      pantalla del celular para el contenido */
       width: MediaQuery.of(context).size.width,
       height: MediaQuery.of(context).size.height,
 
@@ -27,14 +33,10 @@ class AvisosPageGeneral extends StatelessWidget {
           // Padding de separacion entre el contenido y los bordes del celular
           padding: const EdgeInsets.fromLTRB(24, 33, 24, 24),
           child: Column(
-            //mainAxisAlignment: MainAxisAlignment.spaceBetween,
             crossAxisAlignment: CrossAxisAlignment.start,
         
             children: <Widget>[
-
-              // SizedBox(
-              //   height: MediaQuery.of(context).size.height * 0.04,
-              // ),
+              
               subtituloDos(subtituloDosGeneral, 
               MediaQuery.of(context).size.width > 1000? 34
               : MediaQuery.of(context).size.width > 800? 30 
