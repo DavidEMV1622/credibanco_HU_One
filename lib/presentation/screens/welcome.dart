@@ -48,6 +48,7 @@ class _WelcomeViewState extends State<WelcomeView> {
                     textParrafo:
                         "Además de gestionar tus transacciones, también podrás integrar a tu equipo de trabajo",
                     directionImage: "assets/slideUnoRepresentanteLegal.svg",
+                    widthImage: 301,
                   )),
                   //------------------Conteiner #2-----------------
                   Container(
@@ -57,6 +58,7 @@ class _WelcomeViewState extends State<WelcomeView> {
                         "Podrás realizar la administración de usuarios siempre que lo desees desde la opción de: ",
                     subTitle: "Más- Adminitración de usuarios",
                     directionImage: "assets/imagetwo.svg",
+                    widthImage: 180,
                   )),
                   //-------------------Contein-----------------------
                   Container(
@@ -65,6 +67,7 @@ class _WelcomeViewState extends State<WelcomeView> {
                     textParrafo:
                         "Podrás crear usuarios, activarlos, inactivarlos y editarlos",
                     directionImage: "assets/imageThree.svg",
+                    widthImage: 334,
                   ))
                 ],
               ),
@@ -74,7 +77,7 @@ class _WelcomeViewState extends State<WelcomeView> {
       ),
       bottomNavigationBar: page == 2
           ? Padding(
-              padding: const EdgeInsets.fromLTRB(33, 0, 33, 30),
+              padding: const EdgeInsets.fromLTRB(0, 30, 0, 30),
               child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.center,
@@ -83,7 +86,7 @@ class _WelcomeViewState extends State<WelcomeView> {
                       textButton: "Omitir",
                       colorBox: Color(0xFFFFFFFF),
                       border: Border.all(width: 2),
-                      whitMedid: 188,
+                      whitMedid: MediaQuery.of(context).size.width * 0.40,
                       onPressed: () => {},
                     ),
                     const SizedBox(
@@ -92,7 +95,7 @@ class _WelcomeViewState extends State<WelcomeView> {
                     BtnPrimaery(
                       textButton: "Continuar",
                       colorBox: Color(0xFFFFB600),
-                      whitMedid: 188,
+                      whitMedid: MediaQuery.of(context).size.width * 0.40,
                       onPressed: () {},
                     ),
                   ]),

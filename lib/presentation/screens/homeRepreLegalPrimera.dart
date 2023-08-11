@@ -6,13 +6,15 @@ class pageRLPV extends StatefulWidget {
   final String textParrafo;
   final String? subTitle;
   final String? directionImage;
+  final double widthImage;
 
   const pageRLPV(
       {super.key,
       required this.title,
       required this.textParrafo,
       this.subTitle,
-      this.directionImage});
+      this.directionImage,
+      required this.widthImage});
 
   @override
   State<pageRLPV> createState() => _pageRLPVState();
@@ -80,8 +82,7 @@ class _pageRLPVState extends State<pageRLPV> {
                     child: Expanded(
                       child: SvgPicture.asset(
                         widget.directionImage!,
-                        height: 450,
-                        width: 2100,
+                        width: widget.widthImage,
                         //fit: BoxFit.fitHeight,
                       ),
                     ),
