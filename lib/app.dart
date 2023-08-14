@@ -1,5 +1,5 @@
-import 'package:credibanco_hu_aca_1715/presentation/screens/avisos_page.dart';
 import 'package:flutter/material.dart';
+import 'presentation/screens/Login_page.dart';
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -10,8 +10,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       // widget principal
       home: Center(
-        child: AvisoPage(),
-        //child: ListViewPage(),
+        child: LoginPage(),
       ),
     );
   }

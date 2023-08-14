@@ -33,6 +33,7 @@ class _ProgressBarrState extends State<ProgressBarr> {
             ),
           
           itemBuilder: (BuildContext context, index) => // Manejo de cada barra
+            // Container para el diseño de la barra de progreso
             Container(
               height: 4.5,
               /* se resta la cantidad de barras a pintar - 1 para que no se agregue un espacio de 10 adicional en la 
@@ -47,7 +48,7 @@ class _ProgressBarrState extends State<ProgressBarr> {
               width: ((size.width - ((widget.cantidadBarr - 1) * 10)) - 48) / widget.cantidadBarr,
               decoration: BoxDecoration(
                 // Se pinta de un color o no cuando pase de pantalla
-                color: widget.pageActual < index ?  CustomColors.colorGris_4 : CustomColors.colorVerdePantano,
+                color: widget.pageActual <= index ?  CustomColors.colorGris_4 : CustomColors.colorVerdePantano,
                 borderRadius: BorderRadius.circular(20),
               ),
             ),
