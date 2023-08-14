@@ -85,7 +85,7 @@ class _AvisoPageState extends State<AvisoPage> {
       ),
       // Boton de navegacion que aparece cuando se encuentre en la ultima pagina
       bottomNavigationBar: Padding(
-        padding: const EdgeInsets.all(10),
+        padding: const EdgeInsets.fromLTRB(22, 10, 22, 20),
 
         child: page == 2? Row(
           mainAxisAlignment: MainAxisAlignment.center,
